@@ -1,0 +1,9 @@
+from microbit import *
+while True:
+    reading = pin0.read_analog()/204
+    pos = reading // 1
+    columns = ['0' for i in range (5)]
+    columns[pos] = 9
+    img = ((''.join(columns)+':')*5)[0:-1]
+    img = Image(img)
+    display.show(img)
